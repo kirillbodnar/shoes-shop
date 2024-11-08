@@ -1,0 +1,64 @@
+/* src/components/HeroSection/HeroSection.module.css */
+
+.heroSection {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    z-index: 1; /* Ensure content is above the overlay */
+}
+
+.title {
+    font-size: 4.5rem; /* Increased font size for better prominence */
+    font-weight: 700; /* Make the font bolder */
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5rem; /* Slightly larger subtitle to match the title scale */
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 15px 30px; /* Increase padding for larger button size */
+    border: none;
+    border-radius: 0; /* Remove rounded corners for sharp edges */
+    font-size: 1.2rem; /* Increase font size for better readability */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #b71c1c; /* Slightly darker red on hover */
+  
+        text-decoration: none; 
+
+}

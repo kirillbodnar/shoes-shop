@@ -1,0 +1,15 @@
+{
+  "short_name": "App",
+  "name": "React Application",
+  "icons": [
+    {
+      "src": "icon.pdf",
+      "type": "image/pdf",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}

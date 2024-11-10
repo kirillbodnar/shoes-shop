@@ -1,56 +1,62 @@
-@import 'normalize.css';
+@import "normalize.css";
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Base styles for the body */
 body {
-    font-family: Arial, sans-serif; 
-    line-height: 1.6;
-    color: #333; 
-    background-color: #f5f5f5; 
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
 }
 
 /* Default link styles */
 a {
-    color: #007bff;
-    text-decoration: none;
+  color: #007bff;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Heading styles */
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    font-weight: normal;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
 }
 
 /* Button base styles */
 button {
-    cursor: pointer;
-    font-family: inherit;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
 }
 
 a .button:hover {
-    text-decoration: none; /* Ensure no underline on hover */
+  text-decoration: none; /* Ensure no underline on hover */
 }
 
 /* src/styles/global.css */
 
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }

@@ -1,21 +1,21 @@
-// src/components/MenSection.jsx
+// src/components/WomenSection.jsx
 import React, { useEffect, useState } from "react";
-import ProductCard from "../ProductCard/ProductCard";
-import styles from "./MenSection.module.css";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import styles from "./WomenSection.module.css";
 
-const MenSection = () => {
+const WomenSection = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products/category/mens-shoes")
+    fetch("https://dummyjson.com/products/category/womens-shoes")
       .then((res) => res.json())
       .then((data) => setProducts(data.products))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
   return (
-    <section className={styles.menSection}>
-      <h2>Men</h2>
+    <section className={styles.WomenSection}>
+      <h2>Women</h2>
       <div className={styles.productGrid}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
@@ -25,4 +25,4 @@ const MenSection = () => {
   );
 };
 
-export default MenSection;
+export default WomenSection;

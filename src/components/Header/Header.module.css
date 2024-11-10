@@ -1,93 +1,94 @@
 /* src/components/Header/Header.module.css */
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-    background-color: white;
-    font-family: Arial, sans-serif;
-    border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .leftSection {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #d32f2f;
-    margin-right: 60px; /* Space between logo and nav items */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d32f2f;
+  margin-right: 60px; /* Space between logo and nav items */
+  text-decoration: none;
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .navList {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navItem a {
-    text-decoration: none;
-    color: black;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0 5px;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 5px;
 }
 
 .actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .search {
-    display: flex;
-    align-items: center;
-    border: 1px solid #e0e0e0;
-    padding: 5px;
-    border-radius: 4px;
-    background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
 }
 
 .searchInput {
-    border: none;
-    outline: none;
-    font-size: 0.9rem;
-    padding: 5px;
-    width: 120px;
-    background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  padding: 5px;
+  width: 120px;
+  background: transparent;
 }
 
 .searchButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    color: #666;
-    display: flex;
-    align-items: center;
-    padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
 
 .actionItem {
-    color: black;
-    text-decoration: none;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .actionIcon {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }

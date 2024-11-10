@@ -1,0 +1,11 @@
+.WomenSection {
+  padding: 20px;
+  max-width: 1200px; /* Centers the section within a maximum width */
+  margin: 0 auto;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  gap: 20px; /* Space between cards */
+}

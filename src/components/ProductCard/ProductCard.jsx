@@ -1,10 +1,18 @@
 // src/components/ProductCard.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
+  // Функция для перехода на страницу товара
+  const handleCardClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+
   return (
-    <div className={styles.productCard}>
+    <div className={styles.productCard} onClick={handleCardClick}>
       <div className={styles.imageWrapper}>
         <img
           src={product.thumbnail}

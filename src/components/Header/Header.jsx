@@ -6,17 +6,20 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.leftSection}>
-        <div className={styles.logo}>Orix</div>
+        <a className={styles.logo} href="/">
+          Orix
+        </a>
+
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <a href="#new">New</a>
+              <a href="/new">New</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#men">Men</a>
+              <a href="/men">Men</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#women">Women</a>
+              <a href="/women">Women</a>
             </li>
           </ul>
         </nav>

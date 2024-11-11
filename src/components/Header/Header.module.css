@@ -1,4 +1,9 @@
-/* src/components/Header/Header.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #333;
+}
 
 .header {
   display: flex;
@@ -6,7 +11,6 @@
   justify-content: space-between;
   padding: 20px 30px;
   background-color: white;
-  font-family: Arial, sans-serif;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -19,22 +23,14 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #d32f2f;
-  margin-right: 60px; /* Space between logo and nav items */
+  margin-right: 60px;
   text-decoration: none;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
 }
 
 .navList {
   display: flex;
-  gap: 15px;
+  gap: 30px;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .navItem a {
@@ -43,6 +39,27 @@
   font-size: 1rem;
   font-weight: 500;
   padding: 0 5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navItem a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #d32f2f;
+  transition: width 0.3s ease;
+}
+
+.navItem a:hover {
+  color: #d32f2f;
+}
+
+.navItem a:hover::after {
+  width: 100%;
 }
 
 .actions {
@@ -87,8 +104,25 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.actionIcon {
-  font-size: 1.2rem;
+.actionItem:hover {
+  color: #d32f2f; /* Меняем цвет текста при наведении */
+}
+
+.actionItem::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d32f2f; /* Цвет подчеркивания */
+  transition: width 0.3s ease;
+}
+
+.actionItem:hover::after {
+  width: 100%; /* Линия появляется под текстом при наведении */
 }

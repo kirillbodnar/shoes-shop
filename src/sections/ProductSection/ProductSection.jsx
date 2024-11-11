@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./ProductSection.module.css";
+import placeholder from "../../assets/placeholder.webp";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -43,9 +44,10 @@ const ProductPage = () => {
       <div className={styles.imageSection}>
         <div className={styles.mainImageWrapper}>
           <img
-            src={mainImage}
+            src={mainImage || placeholder}
             alt={product.title}
             className={styles.mainImage}
+            loading="lazy"
           />
         </div>
         <div className={styles.thumbnailGallery}>
@@ -53,8 +55,9 @@ const ProductPage = () => {
             product.images.map((image, index) => (
               <img
                 key={index}
-                src={image}
+                src={image || placeholder}
                 alt={`${product.title} - ${index}`}
+                loading="lazy"
                 className={`${styles.thumbnail} ${
                   selectedImageIndex === index ? styles.selectedThumbnail : ""
                 }`}

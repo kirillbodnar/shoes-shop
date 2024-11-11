@@ -32,13 +32,13 @@ const Header = () => {
             className={styles.searchInput}
           />
           <button className={styles.searchButton}>
-            <i className="bi bi-search"></i> {/* Bootstrap search icon */}
+            <i className="bi bi-search"></i>
           </button>
         </div>
-        <a href="#login" className={styles.actionItem}>
+        <a href="login" className={styles.actionItem}>
           <i className="bi bi-person"></i> Log in | Join
         </a>
-        <a href="#cart" className={styles.actionItem}>
+        <a href="cart" className={styles.actionItem}>
           <i className="bi bi-cart"></i>
         </a>
       </div>

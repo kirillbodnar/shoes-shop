@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import styles from "./NewSection.module.css";
+import ProductCard from "../ProductCard/ProductCard";
+import styles from "./NewProductsList.module.css";
 
-const NewSection = () => {
+const NewProductsList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Запросы к обеим категориям
     const fetchData = async () => {
       try {
         const [womenResponse, menResponse] = await Promise.all([
@@ -32,7 +31,7 @@ const NewSection = () => {
   }, []);
 
   return (
-    <section className={styles.NewSection}>
+    <section className={styles.NewProductsList}>
       <h2>New</h2>
       <div className={styles.productGrid}>
         {products.map((product) => (
@@ -43,4 +42,4 @@ const NewSection = () => {
   );
 };
 
-export default NewSection;
+export default NewProductsList;

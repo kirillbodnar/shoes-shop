@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./ProductSection.module.css";
+import styles from "./Product.module.css";
 import placeholder from "../../assets/placeholder.webp";
 
-const ProductPage = () => {
+const Product = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
@@ -107,4 +107,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default Product;

@@ -1,9 +1,9 @@
-import MenSection from "../../sections/MenSection/MenSection";
+import ProductsList from "../../components/ProductsList/ProductsList";
 
 const MenPage = () => {
   return (
     <>
-      <MenSection />
+      <ProductsList name={"Men"} category={"mens-shoes"} />
     </>
   );
 };

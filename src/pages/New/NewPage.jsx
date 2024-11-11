@@ -1,4 +1,4 @@
-import NewSection from "../../sections/NewSection/NewSection";
+import NewSection from "../../components/NewProductsList/NewProductsList";
 
 const NewPage = () => {
   return (

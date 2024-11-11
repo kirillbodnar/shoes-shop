@@ -1,6 +1,6 @@
 // src/components/AboutSection.jsx
 import React from "react";
-import styles from "./AboutSection.module.css";
+import styles from "./About.module.css";
 import image1 from "../../assets/about1.jpg";
 import image2 from "../../assets/about2.jpg";
 import image3 from "../../assets/about3.jpg";
@@ -11,10 +11,10 @@ const AboutSection = () => {
       <div className={styles.purposeSection}>
         <h2>Our Purpose</h2>
         <p>
-          Our Mission We strive to inspire individuals to express their unique
-          style through fashion. Our goal is to provide everyone with access to
-          comfortable, high-quality, and stylish clothing that fits seamlessly
-          into their lives.
+          We strive to inspire individuals to express their unique style through
+          fashion. Our goal is to provide everyone with access to comfortable,
+          high-quality, and stylish clothing that fits seamlessly into their
+          lives.
         </p>
       </div>
 

@@ -1,9 +1,9 @@
-import ProductSection from "../../sections/ProductSection/ProductSection";
+import Product from "../../components/Product/Product";
 
 const ProductPage = () => {
   return (
     <>
-      <ProductSection />
+      <Product />
     </>
   );
 };

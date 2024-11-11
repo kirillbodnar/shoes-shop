@@ -1,10 +1,10 @@
-import WomenSection from "../../sections/WomenSection/WomenSection";
+import ProductsList from "../../components/ProductsList/ProductsList";
 
-const WomenPage = () => {
+const WomanPage = () => {
   return (
     <>
-      <WomenSection />
+      <ProductsList name={"Woman"} category={"womens-shoes"} />
     </>
   );
 };
-export default WomenPage;
+export default WomanPage;

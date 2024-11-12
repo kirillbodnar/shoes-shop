@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
+// src/components/Product/Product.jsx
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addItem } from "../../store/cartSlice";
 import styles from "./Product.module.css";
 import placeholder from "../../assets/placeholder.webp";
 
@@ -9,6 +12,7 @@ const Product = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [mainImage, setMainImage] = useState("");
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${productId}`)
@@ -29,6 +33,17 @@ const Product = () => {
     if (!selectedSize) {
       alert("Please select a size before adding to cart.");
     } else {
+      console.log("Dispatching addItem with:", product);
+      dispatch(
+        addItem({
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          size: selectedSize,
+          quantity: 1,
+          image: mainImage,
+        })
+      );
       alert(`Added ${product.title} (Size: ${selectedSize}) to cart.`);
     }
   };

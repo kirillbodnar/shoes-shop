@@ -25,10 +25,10 @@ const Header = () => {
         </nav>
       </div>
       <div className={styles.actions}>
-        <a href="login" className={styles.actionItem}>
+        <a href="/login" className={styles.actionItem}>
           <i className="bi bi-person"></i> Log in | Join
         </a>
-        <a href="cart" className={styles.actionItem}>
+        <a href="/cart" className={styles.actionItem}>
           <i className="bi bi-cart"></i>
         </a>
       </div>

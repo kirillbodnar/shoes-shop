@@ -10,22 +10,27 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AboutPage from "./pages/About/AboutPage";
 import ProductPage from "./pages/Product/ProductPage";
-import { store } from "./store/store";
+import { persistor, store } from "./store/store";
+import Cart from "./components/Cart/Cart";
+import { PersistGate } from "redux-persist/integration/react";
 
 const App = () => {
   return (
     <>
       <Provider store={store}>
-        <Header />
-        <Routes>
-          <Route path="" element={<HomePage />} />
-          <Route path="new" element={<NewPage />} />
-          <Route path="men" element={<MenPage />} />
-          <Route path="women" element={<WomenPage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="product/:productId" element={<ProductPage />} />
-        </Routes>
-        <Footer />
+        <PersistGate loading={null} persistor={persistor}>
+          <Header />
+          <Routes>
+            <Route path="" element={<HomePage />} />
+            <Route path="new" element={<NewPage />} />
+            <Route path="men" element={<MenPage />} />
+            <Route path="women" element={<WomenPage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="product/:productId" element={<ProductPage />} />
+            <Route path="cart" element={<Cart />} />
+          </Routes>
+          <Footer />
+        </PersistGate>
       </Provider>
     </>
   );

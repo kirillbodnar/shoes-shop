@@ -8,26 +8,23 @@ const Product = () => {
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [mainImage, setMainImage] = useState("");
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0); // Track selected thumbnail
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   useEffect(() => {
-    // Fetch product data by ID
     fetch(`https://dummyjson.com/products/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
-        setMainImage(data.thumbnail); // Set the main image initially
+        setMainImage(data.thumbnail);
       });
   }, [productId]);
 
   if (!product) return <p>Loading...</p>;
 
-  // Handle size selection
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
   };
 
-  // Handle "Add to Cart" (mock function for now)
   const handleAddToCart = () => {
     if (!selectedSize) {
       alert("Please select a size before adding to cart.");
@@ -40,7 +37,6 @@ const Product = () => {
 
   return (
     <div className={styles.productPage}>
-      {/* Left Section: Image Gallery */}
       <div className={styles.imageSection}>
         <div className={styles.mainImageWrapper}>
           <img
@@ -63,20 +59,18 @@ const Product = () => {
                 }`}
                 onClick={() => {
                   setMainImage(image);
-                  setSelectedImageIndex(index); // Update selected thumbnail
+                  setSelectedImageIndex(index);
                 }}
               />
             ))}
         </div>
       </div>
 
-      {/* Right Section: Product Details */}
       <div className={styles.detailsSection}>
         <h1 className={styles.title}>{product.title}</h1>
         <p className={styles.price}>Price: ${product.price}</p>
         <p className={styles.description}>{product.description}</p>
 
-        {/* Size Selection */}
         <div className={styles.sizeOptions}>
           <p>Select Size:</p>
           <div className={styles.sizeGrid}>
@@ -98,7 +92,6 @@ const Product = () => {
           </div>
         </div>
 
-        {/* Add to Cart Button */}
         <button onClick={handleAddToCart} className={styles.addToCartButton}>
           Add to Cart
         </button>

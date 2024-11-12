@@ -109,7 +109,7 @@ body {
 }
 
 .actionItem:hover {
-  color: #d32f2f; /* Меняем цвет текста при наведении */
+  color: #d32f2f;
 }
 
 .actionItem::after {
@@ -119,10 +119,9 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #d32f2f; /* Цвет подчеркивания */
-  transition: width 0.3s ease;
+  background-color: #d32f2f;
 }
 
 .actionItem:hover::after {
-  width: 100%; /* Линия появляется под текстом при наведении */
+  width: 100%;
 }

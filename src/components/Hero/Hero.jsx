@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./HeroSection.module.css";
+import styles from "./Hero.module.css";
 import backgroundImage from "../../assets/hero-background.jpg";
 
-const HeroSection = () => {
+const Hero = () => {
   return (
     <section
       className={styles.heroSection}
@@ -25,4 +25,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;

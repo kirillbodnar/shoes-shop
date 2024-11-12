@@ -1,5 +1,5 @@
-// src/components/Header/Header.jsx
 import React from "react";
+
 import styles from "./Header.module.css";
 
 const Header = () => {
@@ -25,16 +25,6 @@ const Header = () => {
         </nav>
       </div>
       <div className={styles.actions}>
-        <div className={styles.search}>
-          <input
-            type="text"
-            placeholder="Search"
-            className={styles.searchInput}
-          />
-          <button className={styles.searchButton}>
-            <i className="bi bi-search"></i>
-          </button>
-        </div>
         <a href="login" className={styles.actionItem}>
           <i className="bi bi-person"></i> Log in | Join
         </a>

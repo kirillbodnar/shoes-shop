@@ -1,11 +1,10 @@
-// src/components/AboutSection.jsx
 import React from "react";
 import styles from "./About.module.css";
 import image1 from "../../assets/about1.jpg";
 import image2 from "../../assets/about2.jpg";
 import image3 from "../../assets/about3.jpg";
 
-const AboutSection = () => {
+const About = () => {
   return (
     <section className={styles.aboutSection}>
       <div className={styles.purposeSection}>
@@ -18,7 +17,6 @@ const AboutSection = () => {
         </p>
       </div>
 
-      {/* Our Communities Section */}
       <div className={styles.communitySection}>
         <div className={styles.text}>
           <h3>Our Team</h3>
@@ -34,7 +32,6 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Sport Culture Section */}
       <div className={styles.sportSection}>
         <div className={styles.image}>
           <img src={image2} alt="Sport Culture" />
@@ -50,7 +47,6 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Responsibly Made Section */}
       <div className={styles.responsibilitySection}>
         <div className={styles.text}>
           <h3>Responsibly Made</h3>
@@ -69,4 +65,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default About;

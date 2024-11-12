@@ -1,9 +1,9 @@
-import NewSection from "../../components/NewProductsList/NewProductsList";
+import NewProductsList from "../../components/NewProductsList/NewProductsList";
 
 const NewPage = () => {
   return (
     <>
-      <NewSection />
+      <NewProductsList />
     </>
   );
 };

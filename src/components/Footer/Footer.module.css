@@ -64,14 +64,14 @@
 }
 
 .socialSection img {
-  width: 50px; /* Set the width */
-  height: 50px; /* Set the height */
-  transition: transform 0.2s ease; /* For hover animation */
+  width: 50px;
+  height: 50px;
+  transition: transform 0.2s ease;
   cursor: pointer;
 }
 
 .socialSection img:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
+  transform: scale(1.1);
 }
 
 .footerBottom {
@@ -89,7 +89,6 @@
 }
 
 .divider {
-  border-top: 2px solid #ddd; /* Цвет и толщина линии */
-
+  border-top: 2px solid #ddd;
   margin-bottom: 2rem;
 }

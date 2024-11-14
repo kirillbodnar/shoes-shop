@@ -12,7 +12,8 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: end;
-  gap: 3rem;
+  margin-bottom: 1rem;
+  gap: 2rem;
 }
 
 .productGrid {
@@ -26,4 +27,32 @@
   color: #666;
   text-align: center;
   margin-top: 20px;
+}
+
+/* Планшетная версия */
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr); /* Две колонки на планшете */
+  }
+
+  .searchOptionsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Мобильная версия */
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: 1fr; /* Одна колонка на мобильных устройствах */
+  }
+
+  .searchOptionsContainer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
 }

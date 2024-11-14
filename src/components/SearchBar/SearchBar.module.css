@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-self: right;
+  gap: 8px;
 }
 
 .searchInput {
@@ -15,8 +16,32 @@
 .searchButton {
   background: none;
   border: none;
-  cursor: pointer;
+
   padding: 8px;
   font-size: 20px;
   color: #333;
+}
+
+@media (max-width: 768px) {
+  .searchInput {
+    width: 150px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchContainer {
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  .searchInput {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .searchButton {
+    align-self: center;
+    font-size: 18px;
+  }
 }

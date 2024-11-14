@@ -24,6 +24,8 @@
   position: relative;
   text-align: center;
   z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
 .title {
@@ -34,13 +36,14 @@
 
 .subtitle {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .buttons {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .button {
@@ -53,6 +56,52 @@
   transition: background-color 0.3s ease;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: #b71c1c;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    height: 80vh;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .buttons {
+    flex-direction: column;
+
+    align-items: center;
+    gap: 10px;
+  }
 }

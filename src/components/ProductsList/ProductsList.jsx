@@ -4,29 +4,39 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from "./ProductsList.module.css";
 import SortOptions from "../SortOptions/SortOptions";
 import SearchBar from "../SearchBar/SearchBar";
+import Loading from "../Loading/Loading"; // Импорт компонента Loading
 
 const ProductsList = ({ name, category }) => {
   const [products, setProducts] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const [sortOption, setSortOption] = useState("default");
+  const [isLoading, setIsLoading] = useState(true); // Состояние для отслеживания загрузки
 
-  // Получаем searchQuery из Redux
   const searchQuery = useSelector((state) => state.search);
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/category/${category}`)
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchProducts = async () => {
+      setIsLoading(true); // Устанавливаем загрузку в true перед началом
+      try {
+        const response = await fetch(
+          `https://dummyjson.com/products/category/${category}`
+        );
+        const data = await response.json();
         setProducts(data.products);
         setSortedProducts(data.products);
-      })
-      .catch((error) => console.error("Error fetching products:", error));
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setIsLoading(false); // Отключаем загрузку после завершения
+      }
+    };
+
+    fetchProducts();
   }, [category]);
 
   useEffect(() => {
     let sortedArray = [...products];
 
-    // Сортируем продукты на основе локального sortOption
     switch (sortOption) {
       case "priceAsc":
         sortedArray.sort((a, b) => a.price - b.price);
@@ -41,7 +51,6 @@ const ProductsList = ({ name, category }) => {
         sortedArray = products;
     }
 
-    // Фильтруем продукты на основе searchQuery из Redux
     const filteredProducts = sortedArray.filter((product) =>
       product.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -61,7 +70,9 @@ const ProductsList = ({ name, category }) => {
         <SearchBar />
       </div>
 
-      {sortedProducts.length > 0 ? (
+      {isLoading ? ( // Показываем компонент Loading, если данные загружаются
+        <Loading />
+      ) : sortedProducts.length > 0 ? (
         <div className={styles.productGrid}>
           {sortedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />

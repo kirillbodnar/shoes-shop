@@ -2,6 +2,7 @@
   display: flex;
   gap: 2rem;
   padding: 2rem;
+  flex-wrap: wrap;
 }
 
 .imageSection {
@@ -24,7 +25,8 @@
   transition: transform 0.3s ease;
 }
 
-.mainImage:hover {
+.mainImage:hover,
+.mainImage:focus {
   transform: scale(1.1);
   object-fit: contain;
 }
@@ -94,7 +96,8 @@
   font-weight: bold;
 }
 
-.addToCartButton {
+.addToCartButton,
+.removeButton {
   margin-top: 1.5rem;
   padding: 1rem;
   background-color: #d00;
@@ -105,6 +108,68 @@
   transition: background-color 0.3s ease;
 }
 
-.addToCartButton:hover {
+.addToCartButton {
+  margin-right: 1rem;
+}
+
+.addToCartButton:hover,
+.removeButton:hover,
+.addToCartButton:focus,
+.removeButton:focus {
   background-color: #b00;
+}
+
+@media (max-width: 768px) {
+  .productPage {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .price {
+    font-size: 1.4rem;
+  }
+
+  .addToCartButton,
+  .removeButton {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .addToCartButton {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .productPage {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .sizeGrid {
+    gap: 0.3rem;
+  }
+
+  .addToCartButton,
+  .removeButton {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.7rem;
+    margin-left: 0;
+  }
 }

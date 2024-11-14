@@ -2,14 +2,19 @@
   position: relative;
   display: flex;
   width: 160px;
-  justify-self: right;
   flex-direction: column;
-  margin-bottom: 1rem;
 }
 
 .label {
   font-size: 16px;
-  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 18px;
 }
 
 .sortSelect {
@@ -27,4 +32,29 @@
 .sortSelect:focus {
   outline: none;
   border-color: #666;
+}
+
+@media (max-width: 768px) {
+  .label {
+    font-size: 15px;
+  }
+
+  .sortSelect {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sortContainer {
+    width: 100%;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .sortSelect {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

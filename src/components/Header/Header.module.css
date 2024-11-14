@@ -54,7 +54,8 @@ body {
   transition: width 0.3s ease;
 }
 
-.navItem a:hover {
+.navItem a:hover,
+.navItem a:focus {
   color: #d32f2f;
 }
 
@@ -68,36 +69,7 @@ body {
   gap: 15px;
 }
 
-.search {
-  display: flex;
-  align-items: center;
-  border: 1px solid #e0e0e0;
-  padding: 5px;
-  border-radius: 4px;
-  background-color: #f5f5f5;
-}
-
-.searchInput {
-  border: none;
-  outline: none;
-  font-size: 0.9rem;
-  padding: 5px;
-  width: 120px;
-  background: transparent;
-}
-
-.searchButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  color: #666;
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
-
-.actionItem {
+.cart {
   color: black;
   text-decoration: none;
   font-size: 1rem;
@@ -108,20 +80,86 @@ body {
   transition: color 0.3s ease;
 }
 
-.actionItem:hover {
+.cart:hover,
+.cart:focus {
   color: #d32f2f;
 }
 
-.actionItem::after {
-  content: "";
+.cartCount {
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #d32f2f;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
-.actionItem:hover::after {
-  width: 100%;
+.modalButton {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+    margin-right: 50px;
+  }
+
+  .navItem a {
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .cartCount {
+    top: -6px;
+    right: -6px;
+    padding: 1px 5px;
+  }
+  .modalButton {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px 20px;
+    justify-content: space-between;
+  }
+
+  .navList {
+    display: none;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  .actions {
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .modalButton {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    transition: color 0.3s ease;
+  }
+
+  .modalButton:hover,
+  .modalButton:focus {
+    color: #d32f2f;
+  }
 }

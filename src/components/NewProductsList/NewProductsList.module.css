@@ -1,16 +1,19 @@
-.searchOptionsContainer {
-  display: flex;
-  flex-direction: column-reverse;
-
-  align-items: end;
-  gap: 3rem;
-}
-
-.NewProductsList {
+.newProductsList {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.searchOptionsContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+  margin-bottom: 1rem;
+  gap: 2rem;
 }
 
 .productGrid {
@@ -18,9 +21,38 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
+
 .noResults {
   font-size: 1.5rem;
   color: #666;
   text-align: center;
   margin-top: 20px;
+}
+
+/* Планшетная версия */
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr); /* Две колонки на планшете */
+  }
+
+  .searchOptionsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Мобильная версия */
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: 1fr; /* Одна колонка на мобильных устройствах */
+  }
+
+  .searchOptionsContainer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
 }

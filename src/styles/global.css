@@ -20,7 +20,8 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: none;
 }
 
@@ -44,7 +45,8 @@ button {
   color: #fff;
 }
 
-a .button:hover {
+a .button:hover,
+a .button:focus {
   text-decoration: none;
 }
 

@@ -14,29 +14,22 @@ const cartSlice = createSlice({
 
       if (existingItem) {
         existingItem.quantity += quantity;
-        console.log("Updating quantity of existing item:", existingItem);
       } else {
         state.items.push({ id, title, price, size, quantity, image });
-        console.log("Adding new item to cart:", {
-          id,
-          title,
-          price,
-          size,
-          quantity,
-          image,
-        });
       }
     },
     removeItem: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
-      console.log("Removing item with id:", action.payload);
+      const { id, size } = action.payload;
+      state.items = state.items.filter(
+        (item) => !(item.id === id && item.size === size)
+      );
     },
     clearCart: (state) => {
       state.items = [];
-      console.log("Cart cleared");
     },
   },
 });
-
+export const selectTotalItems = (state) =>
+  state.cart.items.reduce((total, item) => total + item.quantity, 0);
 export const { addItem, removeItem, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

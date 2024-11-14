@@ -33,7 +33,9 @@ const Cart = () => {
                   <p className={styles.itemInfo}>Price: ${item.price}</p>
                   <p className={styles.itemInfo}>Quantity: {item.quantity}</p>
                   <button
-                    onClick={() => dispatch(removeItem(item.id))}
+                    onClick={() =>
+                      dispatch(removeItem({ id: item.id, size: item.size }))
+                    }
                     className={styles.removeButton}
                   >
                     Remove

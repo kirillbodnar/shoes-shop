@@ -1,10 +1,10 @@
-// src/components/Product/Product.jsx
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addItem } from "../../store/cartSlice";
+import { addItem, removeItem } from "../../store/cartSlice";
 import styles from "./Product.module.css";
 import placeholder from "../../assets/placeholder.webp";
+import Loading from "../Loading/Loading"; // Импорт компонента Loading
 
 const Product = () => {
   const { productId } = useParams();
@@ -12,18 +12,34 @@ const Product = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [mainImage, setMainImage] = useState("");
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true); // Состояние загрузки
+
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const isInCart = cartItems.some(
+    (item) => item.id === product?.id && item.size === selectedSize
+  );
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/${productId}`)
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchProduct = async () => {
+      setIsLoading(true); // Включаем загрузку перед началом запроса
+      try {
+        const res = await fetch(`https://dummyjson.com/products/${productId}`);
+        const data = await res.json();
         setProduct(data);
         setMainImage(data.thumbnail);
-      });
+      } catch (error) {
+        console.error("Error fetching product:", error);
+      } finally {
+        setIsLoading(false); // Отключаем загрузку после завершения запроса
+      }
+    };
+
+    fetchProduct();
   }, [productId]);
 
-  if (!product) return <p>Loading...</p>;
+  if (isLoading) return <Loading />; // Показываем Loading, пока идет загрузка
 
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
@@ -33,7 +49,6 @@ const Product = () => {
     if (!selectedSize) {
       alert("Please select a size before adding to cart.");
     } else {
-      console.log("Dispatching addItem with:", product);
       dispatch(
         addItem({
           id: product.id,
@@ -44,7 +59,6 @@ const Product = () => {
           image: mainImage,
         })
       );
-      alert(`Added ${product.title} (Size: ${selectedSize}) to cart.`);
     }
   };
 
@@ -106,10 +120,19 @@ const Product = () => {
             )}
           </div>
         </div>
-
         <button onClick={handleAddToCart} className={styles.addToCartButton}>
           Add to Cart
         </button>
+        {isInCart && (
+          <button
+            onClick={() =>
+              dispatch(removeItem({ id: product.id, size: selectedSize }))
+            }
+            className={styles.removeButton}
+          >
+            Remove from cart
+          </button>
+        )}
       </div>
     </div>
   );

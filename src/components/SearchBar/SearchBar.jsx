@@ -18,9 +18,9 @@ const SearchBar = () => {
         onChange={handleInputChange}
         className={styles.searchInput}
       />
-      <button className={styles.searchButton}>
+      <div className={styles.searchButton}>
         <i className="bi bi-search"></i>
-      </button>
+      </div>
     </div>
   );
 };

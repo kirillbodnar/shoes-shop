@@ -21,13 +21,13 @@ const App = () => {
         <PersistGate loading={null} persistor={persistor}>
           <Header />
           <Routes>
-            <Route path="" element={<HomePage />} />
-            <Route path="new" element={<NewPage />} />
-            <Route path="men" element={<MenPage />} />
-            <Route path="women" element={<WomenPage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="product/:productId" element={<ProductPage />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/new" element={<NewPage />} />
+            <Route path="/men" element={<MenPage />} />
+            <Route path="/women" element={<WomenPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/product/:productId" element={<ProductPage />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
           <Footer />
         </PersistGate>

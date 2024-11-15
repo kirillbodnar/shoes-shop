@@ -32,9 +32,6 @@ const Footer = () => {
             <li>
               <a href="/about">Our Purpose</a>
             </li>
-            <li>
-              <a href="/contact">Contact Us</a>
-            </li>
           </ul>
         </div>
         <div className={styles.socialSection}>

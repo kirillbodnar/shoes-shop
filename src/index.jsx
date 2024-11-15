@@ -4,13 +4,13 @@ import "./index.css";
 import "./styles/global.css";
 import App from "./App";
 
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/shoes-shop">
+    <HashRouter basename="/shoes-shop">
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );

@@ -16,7 +16,7 @@ const Header = () => {
     <>
       <header className={styles.header}>
         <div className={styles.leftSection}>
-          <a className={styles.logo} href="/">
+          <a className={styles.logo} href="/shoes-shop">
             Orix
           </a>
 

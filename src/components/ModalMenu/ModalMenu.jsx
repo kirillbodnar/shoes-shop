@@ -1,4 +1,3 @@
-// src/components/ModalMenu/ModalMenu.jsx
 import React from "react";
 import styles from "./ModalMenu.module.css";
 

@@ -32,6 +32,11 @@ const ModalMenu = ({ isOpen, onClose }) => {
               Women
             </a>
           </li>
+          <li>
+            <a href="/signup" className={styles.signUp}>
+              Log In | Sign Up
+            </a>
+          </li>
         </ul>
       </div>
     </div>

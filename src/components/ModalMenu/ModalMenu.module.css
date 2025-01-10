@@ -22,7 +22,7 @@
 }
 
 .modalContent {
-  background-color: white;
+  background-color: var(--background-secondary);
   width: 100%;
   height: 100%;
   display: flex;
@@ -45,14 +45,14 @@
   align-items: center;
   width: 100%;
   padding: 10px 20px;
-  background-color: white;
+  background-color: var(--background-secondary);
   border-bottom: 1px solid #ddd;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #d32f2f;
+  color: var(--main-color);
   text-decoration: none;
 }
 
@@ -61,7 +61,7 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #d32f2f;
+  color: var(--main-color);
 }
 
 .menuList {
@@ -75,12 +75,19 @@
 
 .menuItem {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--main-text);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.signUp {
+  font-size: 1.2rem;
+  color: var(--button-color);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .menuItem:hover,
 .menuItem:focus {
-  color: #d32f2f;
+  color: var(--main-color);
 }

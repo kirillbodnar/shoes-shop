@@ -19,7 +19,6 @@ const Header = () => {
           <a className={styles.logo} href="/">
             Orix
           </a>
-
           <nav className={styles.nav}>
             <ul className={styles.navList}>
               <li className={styles.navItem}>
@@ -40,6 +39,9 @@ const Header = () => {
             {totalItems > 0 && (
               <span className={styles.cartCount}>{totalItems}</span>
             )}
+          </a>
+          <a href="/signup" className={styles.signUp}>
+            Log In | Sign Up
           </a>
           <div className={styles.modalButton} onClick={handleModalToggle}>
             <i className="bi bi-list"></i>

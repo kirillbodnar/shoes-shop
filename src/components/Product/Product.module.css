@@ -61,7 +61,7 @@
 
 .price {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--secondary-text);
   font-weight: bold;
 }
 
@@ -83,7 +83,7 @@
 
 .sizeButton {
   padding: 0.5rem 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   cursor: pointer;
   color: black;
   background-color: #f9f9f9;
@@ -92,7 +92,7 @@
 
 .sizeButton.selected {
   border: 2px solid #333;
-  background-color: #e0e0e0;
+  background-color: var(--border-color);
   font-weight: bold;
 }
 
@@ -100,8 +100,8 @@
 .removeButton {
   margin-top: 1.5rem;
   padding: 1rem;
-  background-color: #d00;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--background-secondary);
   border: none;
   cursor: pointer;
   font-size: 1rem;
@@ -116,7 +116,7 @@
 .removeButton:hover,
 .addToCartButton:focus,
 .removeButton:focus {
-  background-color: #b00;
+  background-color: var(--main-color);
 }
 
 @media (max-width: 768px) {

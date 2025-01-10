@@ -21,9 +21,9 @@
 
 .orderSummary {
   flex: 1;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
 }
 
 .cartItem {
@@ -47,12 +47,12 @@
 
 .itemInfo {
   margin: 5px 0;
-  color: #555;
+  color: var(--secondary-text);
 }
 
 .removeButton {
   background: none;
-  color: red;
+  color: var(--accent-color);
   border: none;
   cursor: pointer;
   padding: 0;
@@ -69,8 +69,8 @@
 
 .checkoutButton {
   width: 100%;
-  background-color: red;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--background-secondary);
   padding: 15px;
   border: none;
   font-size: 1rem;
@@ -80,7 +80,7 @@
 
 .checkoutButton:hover,
 .checkoutButton:focus {
-  background-color: darkred;
+  background-color: var(--accent-hover);
 }
 
 .emptyCard {
@@ -96,7 +96,7 @@
   .cartTitle {
     font-size: 1.8rem;
     text-align: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .cartContent {

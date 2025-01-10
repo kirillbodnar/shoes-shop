@@ -19,7 +19,7 @@
 
   padding: 8px;
   font-size: 20px;
-  color: #333;
+  color: var(--main-text);
 }
 
 @media (max-width: 768px) {

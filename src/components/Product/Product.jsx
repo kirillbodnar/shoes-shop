@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { addItem, removeItem } from "../../store/cartSlice";
 import styles from "./Product.module.css";
 import placeholder from "../../assets/placeholder.webp";
-import Loading from "../Loading/Loading"; // Импорт компонента Loading
+import Loading from "../Loading/Loading";
 
 const Product = () => {
   const { productId } = useParams();
@@ -12,7 +12,7 @@ const Product = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [mainImage, setMainImage] = useState("");
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true); // Состояние загрузки
+  const [isLoading, setIsLoading] = useState(true);
 
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
@@ -23,7 +23,7 @@ const Product = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      setIsLoading(true); // Включаем загрузку перед началом запроса
+      setIsLoading(true);
       try {
         const res = await fetch(`https://dummyjson.com/products/${productId}`);
         const data = await res.json();
@@ -32,14 +32,14 @@ const Product = () => {
       } catch (error) {
         console.error("Error fetching product:", error);
       } finally {
-        setIsLoading(false); // Отключаем загрузку после завершения запроса
+        setIsLoading(false);
       }
     };
 
     fetchProduct();
   }, [productId]);
 
-  if (isLoading) return <Loading />; // Показываем Loading, пока идет загрузка
+  if (isLoading) return <Loading />;
 
   const handleSizeSelect = (size) => {
     setSelectedSize(size);

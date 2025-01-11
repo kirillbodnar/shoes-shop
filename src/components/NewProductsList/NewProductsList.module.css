@@ -29,10 +29,9 @@
   margin-top: 20px;
 }
 
-/* Планшетная версия */
 @media (max-width: 768px) {
   .productGrid {
-    grid-template-columns: repeat(2, 1fr); /* Две колонки на планшете */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .searchOptionsContainer {
@@ -43,10 +42,9 @@
   }
 }
 
-/* Мобильная версия */
 @media (max-width: 480px) {
   .productGrid {
-    grid-template-columns: 1fr; /* Одна колонка на мобильных устройствах */
+    grid-template-columns: 1fr;
   }
 
   .searchOptionsContainer {

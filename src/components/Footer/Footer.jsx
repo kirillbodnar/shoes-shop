@@ -13,7 +13,7 @@ const Footer = () => {
           <p>Your go-to place for comfortable shoes.</p>
         </div>
         <div className={styles.linksSection}>
-          <h3>Shop</h3>
+          <h3 className={styles.linksTitle}>Shop</h3>
           <ul>
             <li>
               <a href="/new">New Arrivals</a>
@@ -27,7 +27,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className={styles.linksSection}>
-          <h3>About Us</h3>
+          <h3 className={styles.linksTitle}>About Us</h3>
           <ul>
             <li>
               <a href="/about">Our Purpose</a>

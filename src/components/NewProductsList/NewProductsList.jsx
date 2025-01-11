@@ -4,18 +4,18 @@ import ProductCard from "../ProductCard/ProductCard";
 import styles from "./NewProductsList.module.css";
 import SortOptions from "../SortOptions/SortOptions";
 import SearchBar from "../SearchBar/SearchBar";
-import Loading from "../Loading/Loading"; // Импорт компонента Loading
+import Loading from "../Loading/Loading";
 
 const NewProductsList = () => {
   const [products, setProducts] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
   const [sortOption, setSortOption] = useState("default");
-  const [isLoading, setIsLoading] = useState(true); // Состояние для отслеживания загрузки
+  const [isLoading, setIsLoading] = useState(true);
   const searchQuery = useSelector((state) => state.search);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true); // Устанавливаем загрузку в true перед началом
+      setIsLoading(true);
       try {
         const [womenResponse, menResponse] = await Promise.all([
           fetch("https://dummyjson.com/products/category/womens-shoes"),
@@ -31,10 +31,10 @@ const NewProductsList = () => {
         );
 
         setProducts(shuffledProducts);
-        setIsLoading(false); // Отключаем загрузку после завершения
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching products:", error);
-        setIsLoading(false); // Отключаем загрузку в случае ошибки
+        setIsLoading(false);
       }
     };
 
@@ -78,7 +78,7 @@ const NewProductsList = () => {
       </div>
 
       {isLoading ? (
-        <Loading /> // Отображаем компонент Loading, если данные загружаются
+        <Loading />
       ) : sortedProducts.length > 0 ? (
         <div className={styles.productGrid}>
           {sortedProducts.map((product) => (

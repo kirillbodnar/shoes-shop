@@ -10,10 +10,11 @@
 
 .searchOptionsContainer {
   display: flex;
-  flex-direction: column-reverse;
-  align-items: end;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
   margin-bottom: 1rem;
-  gap: 2rem;
 }
 
 .productGrid {
